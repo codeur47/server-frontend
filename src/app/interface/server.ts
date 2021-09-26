@@ -6,6 +6,5 @@ export interface Server {
     name: string;
     memory: string;
     type: string;
-    imageUrl: string;
     status: Status;
 }

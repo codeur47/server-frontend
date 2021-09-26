@@ -26,13 +26,6 @@ export class ServerService {
         catchError(ServerService.handleError)
       );
 
-  ping$ = (ipAddress: string) => <Observable<CustomResponse>>
-    this.http.get<CustomResponse>(`${this.apiUrl}/server/ping/${ipAddress}`)
-      .pipe(
-        tap(console.log),
-        catchError(ServerService.handleError)
-      );
-
   filter$ = (status: Status, response: CustomResponse) => <Observable<CustomResponse>>
     new Observable<CustomResponse>(
       subscriber => {
