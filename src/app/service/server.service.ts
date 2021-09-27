@@ -5,10 +5,11 @@ import { tap, catchError } from 'rxjs/operators';
 import { Status } from '../enum/status.enum';
 import { CustomResponse } from '../interface/custom-response';
 import { Server } from '../interface/server';
+import {environment} from "../../environments/environment";
 
 @Injectable({ providedIn: 'root' })
 export class ServerService {
-  private readonly apiUrl = 'http://localhost:8080';
+  private readonly apiUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
